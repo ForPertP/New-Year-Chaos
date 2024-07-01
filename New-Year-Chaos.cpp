@@ -1,3 +1,17 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+string ltrim(const string &);
+string rtrim(const string &);
+vector<string> split(const string &);
+
+/*
+ * Complete the 'minimumBribes' function below.
+ *
+ * The function accepts INTEGER_ARRAY q as parameter.
+ */
+
 void minimumBribes(vector<int> q)
 {
     int total = 0;
