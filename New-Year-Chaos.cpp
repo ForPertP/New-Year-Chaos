@@ -46,3 +46,37 @@ void minimumBribes(vector<int> q)
         cout << total << '\n';
     }
 }
+
+
+int main()
+{
+    string t_temp;
+    getline(cin, t_temp);
+
+    int t = stoi(ltrim(rtrim(t_temp)));
+
+    for (int t_itr = 0; t_itr < t; t_itr++) {
+        string n_temp;
+        getline(cin, n_temp);
+
+        int n = stoi(ltrim(rtrim(n_temp)));
+
+        string q_temp_temp;
+        getline(cin, q_temp_temp);
+
+        vector<string> q_temp = split(rtrim(q_temp_temp));
+
+        vector<int> q(n);
+
+        for (int i = 0; i < n; i++) {
+            int q_item = stoi(q_temp[i]);
+
+            q[i] = q_item;
+        }
+
+        minimumBribes(q);
+    }
+
+    return 0;
+}
+
