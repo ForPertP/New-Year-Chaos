@@ -12,6 +12,45 @@ using System.Text.RegularExpressions;
 using System.Text;
 using System;
 
+class Result
+{
+
+    /*
+     * Complete the 'minimumBribes' function below.
+     *
+     * The function accepts INTEGER_ARRAY q as parameter.
+     */
+
+    public static void minimumBribes(List<int> q)
+    {
+        int totalBribes = 0;
+        int n = q.Count;
+
+        for (int i = 0; i < n; ++i)
+        {
+            int originalPosition = q[i] - 1;
+            int currentPosition = i;
+
+            if (originalPosition - currentPosition > 2)
+            {
+                Console.WriteLine("Too chaotic");
+                return;
+            }
+
+            for (int j = Math.Max(0, originalPosition - 1); j < currentPosition; ++j)
+            {
+                if (q[j] > q[i])
+                {
+                    totalBribes++;
+                }
+            }
+        }
+
+        Console.WriteLine(totalBribes);
+    }    
+
+}
+
 class Solution
 {
     public static void Main(string[] args)
