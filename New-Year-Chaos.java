@@ -20,13 +20,28 @@ class Result {
 
     public static void minimumBribes(List<Integer> q) {
         int totalBribes = 0;
+        int n = q.size();
+
+        for (int i = 0; i < n; ++i) {
+            int originalPosition = q.get(i) - 1;
+            int currentPosition = i;
+
+            if (originalPosition - currentPosition > 2) {
+                System.out.println("Too chaotic");
+                return;
+            }
+
+            for (int j = Math.max(0, originalPosition - 1); j < currentPosition; ++j) {
+                if (q.get(j) > q.get(i)) {
+                    totalBribes++;
+                }
+            }
+        }
 
         System.out.println(totalBribes);
     }    
 
 }
-
-
 
 public class Solution {
     public static void main(String[] args) throws IOException {
